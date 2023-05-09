@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import classes from './AvailableMeals.module.css'
 import Card from '../UI/Card';
 import MealItem from '../MealItem/MealItem';
+
 const DUMMY_MEALS = [
     {
       id: 'm1',
@@ -41,8 +42,9 @@ const DUMMY_MEALS = [
     return(
             
     <Fragment>
-      <Card>
+         <Card>
             < ul className={classes.meals}>{meals}</ul>
+           
             </Card>
     </Fragment>
 
