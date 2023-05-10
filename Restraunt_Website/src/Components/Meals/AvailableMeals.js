@@ -37,13 +37,14 @@ const DUMMY_MEALS = [
         <MealItem  key={item.id}
         name={item.name}
         description={item.description}
-        price={item.price}/>
+        price={item.price}
+      />
     )
     return(
             
     <Fragment>
          <Card>
-            < ul className={classes.meals}>{meals}</ul>
+            <ul className={classes.meals}>{meals}</ul>
            
             </Card>
     </Fragment>
