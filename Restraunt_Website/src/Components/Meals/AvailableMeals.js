@@ -38,8 +38,11 @@ const DUMMY_MEALS = [
         name={item.name}
         description={item.description}
         price={item.price}
+        id={item.id}
       />
+      
     )
+   
     return(
             
     <Fragment>

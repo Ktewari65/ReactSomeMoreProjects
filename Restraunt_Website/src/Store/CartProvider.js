@@ -4,16 +4,37 @@ import CartContext from "./cartContext";
 
 const CartProvider = (props) => { 
   const [addToCartItems, setAddToCartItems]= useState([])
-  const[deletes,setDelete] = useState([])
+  //const[cart,setCart]= useState([])
  
-   
+  console.log(addToCartItems)
     const addItemToCartHandler = (item) =>{
-        setAddToCartItems([...addToCartItems,item])
+      //console.log(item)
+      // setAddToCartItems([...addToCartItems,item])
+       const index = addToCartItems.findIndex((items) =>items.id===item.id)
+        if(index!==-1){
+          const updatedCartItems = [...addToCartItems];
+          //console.log(updatedCartItems)
+             updatedCartItems[index].quantity += 1;
+          setAddToCartItems(updatedCartItems)
+        }
+        else{
+          setAddToCartItems([...addToCartItems, {...item, quantity:1}])
+        }
     }
 
     const deleteItemToCartHandler= (id) =>{
-         setDelete([...deletes])
+      console.log(id)
+           const list = addToCartItems.filter((item) =>
+           item.id!==id
+         ) 
+         setAddToCartItems(list)
+      
     }
+      
+   
+      
+    
+    
 
 
     const cartItems={
